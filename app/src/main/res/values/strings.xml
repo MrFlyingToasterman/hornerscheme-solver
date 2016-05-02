@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Hornerschema-Solver</string>
-    <string name="anzeige">Ausgabe:\n</string>
+    <string name="app_name">Hornerscheme-Solver</string>
+    <string name="anzeige">Output:\n</string>
 </resources>

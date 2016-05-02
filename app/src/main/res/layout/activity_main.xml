@@ -20,7 +20,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:hint="X hoch 3" />
+        android:hint="X^3" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/editText"
         android:layout_alignEnd="@+id/editText"
-        android:hint="X hoch 2" />
+        android:hint="X^2" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -59,12 +59,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/editText3"
         android:layout_alignEnd="@+id/editText3"
-        android:hint="Dezimal" />
+        android:hint="Decimal" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ausrechnen"
+        android:text="Solve"
         android:id="@+id/button"
         android:onClick="ausrechnen"
         android:layout_alignParentBottom="true"
@@ -122,7 +122,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Runden ?"
+        android:text="Round ?"
         android:id="@+id/checkBox"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"

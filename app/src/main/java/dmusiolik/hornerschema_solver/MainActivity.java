@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,8 +14,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
-    public DecimalFormat df = new DecimalFormat("#.##");
 
     public void ausrechnen(View view) {
 
@@ -42,35 +39,40 @@ public class MainActivity extends AppCompatActivity {
 
         //int range = 0;
         String nullstellen = "";
-
-        double genauigkeit;
+        double gen = 0;
 
         if (runden.isChecked()) {
-            genauigkeit = 1;
+            gen = 1;
         }else{
-            genauigkeit = 0.1;
+
+            gen = 0.1;
         }
 
 
-        for (int i = 0; startrange <= stoprange; startrange = startrange + genauigkeit) {
+        for (int i = 0; startrange <= stoprange; startrange = startrange + Math.round(gen * 100) / 100.0) {
 
+            startrange = Math.round(startrange * 100) / 100.0;
             ausgabe.setText(ausgabe.getText() + "Range: " + startrange + " ");
+            x3 = Math.round(x3 * 100) /100.0;
             ausgabe.setText(ausgabe.getText() + " " + x3 + " ");
 
             ergebnis0 = 0;
             ergebnis0 = (startrange * x3) + x2;
+            ergebnis0 = Math.round(ergebnis0 * 100) / 100.0;
 
             ausgabe.setText(ausgabe.getText() + " " + ergebnis0 + " ");
 
             ergebnis1 = 0;
             ergebnis1 = (startrange * ergebnis0) + x;
+            ergebnis1 = Math.round(ergebnis1 * 100) / 100.0;
 
             ausgabe.setText(ausgabe.getText() + " " + ergebnis1 + " ");
 
             ergebnis0 = 0;
             ergebnis0 = (startrange * ergebnis1) + dez;
+            ergebnis0 = Math.round(ergebnis0 * 100) / 100.0;
 
-            ausgabe.setText(ausgabe.getText() + " " + df.format(ergebnis0) + " \n");
+            ausgabe.setText(ausgabe.getText() + " " + ergebnis0 + " \n");
 
             if (runden.isChecked()) {
                 ergebnis1 = 0;
@@ -79,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
                     nullstellen = nullstellen + "\nNullstelle gefunden!\nRange: " + startrange + "\n\n";
                 }
             }else{
-                if (df.format(ergebnis0).startsWith("0.")) {
+                System.out.println(ergebnis0 + " Progress working");
+                if (ergebnis0 == 0.0) {
                     nullstellen = nullstellen + "\nNullstelle gefunden!\nRange: " + startrange + "\n\n";
                 }
             }
