@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 if (ergebnis1 == 0) {
                     nullstellen = nullstellen + "\nNullstelle gefunden!\nRange: " + startrange + "\n\n";
                 }
-            }else{
+            }else {
                 System.out.println(ergebnis0 + " Progress working");
                 if (ergebnis0 == 0.0) {
                     nullstellen = nullstellen + "\nNullstelle gefunden!\nRange: " + startrange + "\n\n";
@@ -88,8 +89,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
-
+        if (nullstellen == "") {
+            nullstellen = "\n\nCan't find Zeros with this range.\n\n";
+        }
         ausgabe.setText(ausgabe.getText() + " " + nullstellen + "\n");
-
     }
 }
