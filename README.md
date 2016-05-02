@@ -1,4 +1,4 @@
 # Hornerscheme-solver
-Solves math functions with the hornerscheme (Hornerschema)
-#Testing
-Found some issues, on my Way to fix it..
+Solves math functions with the horner scheme/method (Hornerschema)
+# Simple
+Just working and verry simple tool to solve Mathproblems with the Horner Method.
